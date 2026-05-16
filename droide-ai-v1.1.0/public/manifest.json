@@ -1,0 +1,17 @@
+{
+  "name": "Droid AI Mobile",
+  "short_name": "Droid",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Droid AI Assistant with native Android app design",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "orientation": "portrait"
+}
