@@ -1,0 +1,34 @@
+1079:        <div id="toast-notification" className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-[var(--text-secondary)] text-[var(--bg-main)] px-4 py-2 rounded-full text-sm font-medium shadow-lg animate-in fade-in slide-in-from-bottom-5">
+1105:                className="w-full text-sm py-2.5 pl-10 pr-4 rounded-xl bg-[var(--surface-hover)] border border-[var(--surface-border)] text-[var(--text-primary)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)] transition-all"
+1135:                        className="flex-1 flex items-center gap-2 px-3 py-2 text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--surface-hover)] rounded-lg transition-colors"
+1153:                              className={`w-full text-left px-4 py-2.5 rounded-xl text-sm transition-colors pr-10
+1185:                    <div className="truncate text-sm">{highlightText(s.title, searchQuery)}</div>
+1228:              <div className="text-sm font-semibold text-[var(--text-primary)]">Local User</div>
+1273:            <p className="text-[var(--text-secondary)] mb-6 text-sm">Are you sure you want to delete this chat session? This action cannot be undone.</p>
+1323:                className="w-full h-32 p-4 bg-[var(--surface-hover)] text-[var(--text-primary)] rounded-xl border border-[var(--surface-border)] focus:ring-1 focus:ring-[var(--accent)] text-sm resize-none outline-none leading-relaxed"
+1329:                <span className="font-medium text-[var(--text-primary)] text-sm">Force Bengali/Banglish Reply</span>
+1335:                <span className="font-medium text-[var(--text-primary)] text-sm">Stream Responses</span>
+1342:                  <span className="font-medium text-[var(--text-primary)] text-sm">Auto Text-to-Speech (Read Aloud)</span>
+1429:                      <p className="font-bold text-sm">Adaptive Thinking</p>
+1478:                <input name="name" defaultValue={editingProviderId ? apiProviders.find(p => p.id === editingProviderId)?.name : ''} placeholder="Provider Name (e.g. OpenRouter)" className="w-full p-3 rounded-lg border border-[var(--surface-border)] bg-transparent text-sm focus:border-[var(--accent)] outline-none" required />
+1479:                <input name="url" defaultValue={editingProviderId ? apiProviders.find(p => p.id === editingProviderId)?.url : ''} placeholder="URL (e.g. https://openrouter.ai/api/v1)" className="w-full p-3 rounded-lg border border-[var(--surface-border)] bg-transparent text-sm focus:border-[var(--accent)] outline-none" required />
+1480:                <input name="apiKey" type="password" defaultValue={editingProviderId ? apiProviders.find(p => p.id === editingProviderId)?.apiKey : ''} placeholder="API Key sk-..." className="w-full p-3 rounded-lg border border-[var(--surface-border)] bg-transparent text-sm focus:border-[var(--accent)] outline-none" required />
+1493:                      <div className="font-medium text-sm">{provider.name}</div>
+1538:                <input name="modelId" defaultValue={editingModelId ? customModels.find(m => m.id === editingModelId)?.modelId : ''} placeholder="Model ID (e.g. google/gemini-2.5-flash)" className="w-full p-3 rounded-lg border border-[var(--surface-border)] bg-transparent text-sm focus:border-[var(--accent)] outline-none" required />
+1539:                <input name="displayName" defaultValue={editingModelId ? customModels.find(m => m.id === editingModelId)?.displayName : ''} placeholder="Display Name" className="w-full p-3 rounded-lg border border-[var(--surface-border)] bg-transparent text-sm focus:border-[var(--accent)] outline-none" />
+1541:                <select name="providerId" defaultValue={editingModelId ? customModels.find(m => m.id === editingModelId)?.providerId : ''} className="w-full p-3 rounded-lg border border-[var(--surface-border)] bg-transparent text-sm focus:border-[var(--accent)] outline-none appearance-none" required>
+1546:                <select name="censoredMode" defaultValue={editingModelId ? (customModels.find(m => m.id === editingModelId)?.censoredMode ? 'true' : 'false') : 'false'} className="w-full p-3 rounded-lg border border-[var(--surface-border)] bg-transparent text-sm focus:border-[var(--accent)] outline-none appearance-none">
+1563:                      <div className="font-medium text-sm">{model.modelId}</div>
+1655:                      <button onClick={exportToPDF} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl hover:bg-red-500/10 hover:text-red-600 transition-colors">
+1659:                      <button onClick={exportToMarkdown} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl hover:bg-blue-500/10 hover:text-blue-600 transition-colors">
+1663:                      <button onClick={exportToJSON} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl hover:bg-emerald-500/10 hover:text-emerald-600 transition-colors">
+1667:                      <button onClick={() => { if (currentSession) clearSessionMessages(currentSession.id); }} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl hover:bg-red-500/10 hover:text-red-500 transition-colors">
+1760:                                  <code className={`${className} bg-black/5 px-1.5 py-0.5 rounded text-[var(--text-primary)] font-mono text-sm`} {...props}>
+1766:                                return <div className="overflow-x-auto my-4 border border-[var(--surface-border)] rounded-xl"><table className="w-full border-collapse text-left text-sm">{children}</table></div>
+1800:                              <button onClick={handleCancelEdit} className="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-primary)] px-2 py-1">Cancel</button>
+1801:                              <button onClick={() => handleSaveEdit(message.id)} className="text-sm font-bold bg-[var(--text-primary)] text-[var(--bg-main)] px-4 py-1.5 rounded-lg active:scale-95 transition-transform shadow-sm">Save & Submit</button>
+1841:                <span className="text-sm">you Didn't set the api key</span>
+1845:              <div className="text-sm text-[var(--danger)] text-center my-4 px-4">{errorText}</div>
+1946:              <p className="text-[var(--text-muted)] text-center text-sm mb-6 leading-relaxed">
+1974:              <p className="text-[var(--text-secondary)] mb-6 text-sm">Organize your chats with custom categories.</p>
+2067:                    <p className="text-sm font-medium">No saved prompts yet</p>
