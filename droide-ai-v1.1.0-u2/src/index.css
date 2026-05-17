@@ -1,0 +1,178 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: "Tiempos", "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Anthropic Claude Inspired Palette - DEEP VERSION */
+  --accent: #d97757; 
+  --accent-light: #f5d4c9;
+  --accent-dark: #b85b3d;
+
+  --bg-main: #f3ebd8; /* Deeper Parchment */
+  --bg-drawer: #e9e0cd;
+  --surface: #f9f4e8;
+  --surface-hover: #e6dfcc;
+  --surface-variant: #dfd6c0;
+  --surface-border: #d4ccb8;
+  --border-drawer: #d4ccb8;
+  --border-primary: #d4ccb8;
+  --text-primary: #1a1614; 
+  --text-secondary: #5e5a52;
+  --text-muted: #8a8579;
+  --logo-color: #d97757;
+  
+  --success: #1e6b41;
+  --danger: #b93e3e;
+  --warning: #c27a1c;
+  
+  --bubble-user: #e9e0cd;
+  --bubble-assistant: #f3ebd8;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 14px rgba(26, 22, 20, 0.1);
+  --shadow-lg: 0 10px 30px rgba(26, 22, 20, 0.15);
+}
+
+@layer base {
+  :root {
+    font-size: 14px;
+    --bg-main: #ffffff;
+    --text-primary: #2d2d2d;
+    --text-secondary: #6e6e6e;
+    --accent: #da7756;
+    --caret-color: #da7756;
+  }
+
+  .dark {
+    --bg-main: #12100e; /* Deeper Dark Base */
+    --bg-drawer: #0d0b0a;
+    --surface: #1a1816;
+    --surface-hover: #262320;
+    --surface-variant: #2d2a27;
+    --surface-border: #35312d;
+    --border-drawer: #35312d;
+    --border-primary: #35312d;
+
+    --text-primary: #dcd8d0;
+    --text-secondary: #99948c;
+    --text-muted: #6e6a64;
+    --logo-color: #d97757;
+    
+    --accent: #d97757;
+    --accent-light: #4a281d;
+    --accent-dark: #f09577;
+
+    --bubble-user: #2d2a27;
+    --bubble-assistant: #12100e;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.4);
+    
+    --caret-color: #d97757;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100vw;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    width: 100vw;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .selectable-text {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Android Native Ripple / State Layer Approximation */
+  .android-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  .android-ripple::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+  .android-ripple:hover::after {
+    opacity: 0.08; /* Hover state layer */
+  }
+  .android-ripple:active::after {
+    opacity: 0.12; /* Pressed state layer */
+    transition: opacity 0s;
+  }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.animate-cursor-blink-smooth {
+  animation: cursor-blink 1s ease-in-out infinite;
+}
+
+::selection {
+  background: var(--accent-light);
+  color: var(--text-primary);
+}
+
+.prose strong {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+.prose a {
+  color: var(--accent) !important;
+}
+
+.prose code {
+  color: var(--text-primary) !important;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: var(--text-primary) !important;
+}
+
