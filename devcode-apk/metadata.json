@@ -1,8 +1,0 @@
-{
-  "name": "DEV-CODE",
-  "description": "A mobile-first, native-feeling code editor inspired by Acode, ready for Capacitor/Cordova conversion.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
